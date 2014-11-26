@@ -1,0 +1,172 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{65AD7D5D-BD94-4E67-BF2B-96EC4FA579C9}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>HourTrackerUI</RootNamespace>
+    <AssemblyName>HourTrackerUI</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AlertInputForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AlertInputForm.Designer.cs">
+      <DependentUpon>AlertInputForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChooseMonthToViewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChooseMonthToViewForm.Designer.cs">
+      <DependentUpon>ChooseMonthToViewForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Custom Display Controls\DayView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Custom Display Controls\DayView.Designer.cs">
+      <DependentUpon>DayView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Custom Display Controls\RegularDayView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Custom Display Controls\RegularDayView.Designer.cs">
+      <DependentUpon>RegularDayView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Custom Display Controls\SpecialDayView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Custom Display Controls\SpecialDayView.Designer.cs">
+      <DependentUpon>SpecialDayView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Globals.cs" />
+    <Compile Include="Handlers\DataHandler.cs" />
+    <Compile Include="Handlers\SettingsHandler.cs" />
+    <Compile Include="Helper Functions\UI Functions.cs" />
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MonthDataForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MonthDataForm.Designer.cs">
+      <DependentUpon>MonthDataForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Popups\TimePunch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popups\TimePunch.Designer.cs">
+      <DependentUpon>TimePunch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Settings.cs" />
+    <Compile Include="SettingsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SettingsForm.Designer.cs">
+      <DependentUpon>SettingsForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AlertInputForm.resx">
+      <DependentUpon>AlertInputForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChooseMonthToViewForm.resx">
+      <DependentUpon>ChooseMonthToViewForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Custom Display Controls\DayView.resx">
+      <DependentUpon>DayView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Custom Display Controls\RegularDayView.resx">
+      <DependentUpon>RegularDayView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Custom Display Controls\SpecialDayView.resx">
+      <DependentUpon>SpecialDayView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MonthDataForm.resx">
+      <DependentUpon>MonthDataForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popups\TimePunch.resx">
+      <DependentUpon>TimePunch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="SettingsForm.resx">
+      <DependentUpon>SettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Backend\Backend.csproj">
+      <Project>{048842ee-92df-4a6c-a0b5-e5bcf46413c6}</Project>
+      <Name>Backend</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

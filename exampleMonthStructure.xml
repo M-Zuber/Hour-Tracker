@@ -1,0 +1,23 @@
+<month date="09-2014">
+	<days>
+		<day>
+			<date>03-09-2014</date>
+			<time-in>9:00 am</time-in>
+			<time-out>6:20 pm</time-out>
+			<day-of-week>wednesday</day-of-week>
+			<total-hours>9.3</total-hours>
+		</day>
+		<day>
+			<date>04-09-2014</date>
+			<time-in>9:00 am</time-in>
+			<time-out>6:20 pm</time-out>
+			<day-of-week>sunday</day-of-week>
+			<special>
+				<title>Rosh Hashanah</title>
+				<type>Full Day</type>
+			</special>
+			<total-hours>9.3</total-hours>
+		</day>
+	</days>
+	<total-hours-in-month>18.6</total-hours-in-month>
+</month>

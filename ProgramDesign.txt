@@ -1,0 +1,29 @@
+main form mdi
+	open hours chart
+		asks for a month and opens for the selected month
+	get reports
+		for every month with data
+			if there are missing hours
+				show how many
+	settings
+		opens settings form
+			-hours per month
+			-file location
+			-list of dates that are special(not work days) like holidays --seperate form and file
+---------------------------------------------------------------------
+hours chart
+	grid that corrosponds to every day in the month
+	---------------------------------
+	|Date	|Time-In|Time-Out|Hours |
+	---------------------------------
+	|		|		|		 |		|
+	|		|		|		 |		|
+	|		|		|		 |		|
+	---------------------------------
+	shabbos(saturday) and dates that are not workdays not enabled
+	hours column automatically calculated - not editable
+
+	label on bottom with total of hours for month
+		includes auto 9? hours for special days
+
+	button to save to file
