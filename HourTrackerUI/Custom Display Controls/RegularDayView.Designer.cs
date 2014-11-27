@@ -35,6 +35,7 @@
             this.timeInDisplay = new System.Windows.Forms.TextBox();
             this.lblTimeInDisplay = new System.Windows.Forms.Label();
             this.checkIn = new System.Windows.Forms.Button();
+            this.checkOut = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // totalHoursDisplay
@@ -90,7 +91,7 @@
             // 
             // checkIn
             // 
-            this.checkIn.Location = new System.Drawing.Point(502, -1);
+            this.checkIn.Location = new System.Drawing.Point(501, 3);
             this.checkIn.Name = "checkIn";
             this.checkIn.Size = new System.Drawing.Size(75, 23);
             this.checkIn.TabIndex = 16;
@@ -98,10 +99,21 @@
             this.checkIn.UseVisualStyleBackColor = true;
             this.checkIn.Click += new System.EventHandler(this.checkIn_Click);
             // 
+            // checkOut
+            // 
+            this.checkOut.Location = new System.Drawing.Point(582, 4);
+            this.checkOut.Name = "checkOut";
+            this.checkOut.Size = new System.Drawing.Size(75, 23);
+            this.checkOut.TabIndex = 17;
+            this.checkOut.Text = "Check Out";
+            this.checkOut.UseVisualStyleBackColor = true;
+            this.checkOut.Click += new System.EventHandler(this.checkOut_Click);
+            // 
             // RegularDayView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.checkOut);
             this.Controls.Add(this.checkIn);
             this.Controls.Add(this.totalHoursDisplay);
             this.Controls.Add(this.lblTotalHoursDisplay);
@@ -110,7 +122,7 @@
             this.Controls.Add(this.timeInDisplay);
             this.Controls.Add(this.lblTimeInDisplay);
             this.Name = "RegularDayView";
-            this.Size = new System.Drawing.Size(634, 30);
+            this.Size = new System.Drawing.Size(674, 30);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -125,5 +137,6 @@
         private System.Windows.Forms.TextBox timeInDisplay;
         private System.Windows.Forms.Label lblTimeInDisplay;
         private System.Windows.Forms.Button checkIn;
+        private System.Windows.Forms.Button checkOut;
     }
 }

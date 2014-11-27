@@ -12,40 +12,37 @@ namespace HourTrackerUI.Popups
 {
     public partial class TimePunch : Form
     {
-        public DateTime TimeIn { get; private set; }
+        public DateTime Time { get; private set; }
 
-        public DateTime TimeOut { get; private set; }
-
-        public TimePunch(DateTime timeIn, DateTime timeOut)
+        public TimePunch(DateTime time)
         {
             InitializeComponent();
-            this.TimeIn = timeIn;
-            this.TimeOut = timeOut;
-            SetControlBindings();
-            SetDataBindings();
-        }
+            this.Time = time;
 
-        private void SetDataBindings()
-        {
-            this.timeIn.DataBindings.Add("MaxDate", this.timeOut, "Value");
-            this.timeOut.DataBindings.Add("MinDate", this.timeIn, "Value");
+            SetControlBindings();
         }
 
         private void SetControlBindings()
         {
-            this.timeIn.Value = this.TimeIn;
-            this.timeOut.Value = this.TimeOut;
+            this.timePicker.Value = this.Time;
         }
 
         private void SetPropertiesValues()
         {
-            this.TimeIn = this.timeIn.Value;
-            this.TimeOut = this.timeOut.Value;
+            this.Time = this.timePicker.Value;
         }
         private void punch_Click(object sender, EventArgs e)
         {
             this.SetPropertiesValues();
             this.Close();
+        }
+
+        public void DisplayForTimePunch(DateTime time)
+        {
+            this.Time = time;
+            this.SetControlBindings();
+
+            this.ShowDialog();
         }
     }
 }

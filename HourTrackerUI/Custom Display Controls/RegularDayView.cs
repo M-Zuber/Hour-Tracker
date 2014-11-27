@@ -43,29 +43,62 @@ namespace HourTrackerUI.Custom_Display_Controls
 
         private void checkIn_Click(object sender, EventArgs e)
         {
+
             DateTime newTimeIn;
-            DateTime newTimeOut;
-            using (TimePunch newTimePuncher = new TimePunch(this._dayDisplaying.TimeIn, this._dayDisplaying.TimeOut))
+
+            using (TimePunch newTimePuncher = new TimePunch(this._dayDisplaying.TimeIn))
             {
                 newTimePuncher.ShowDialog();
+                newTimeIn = newTimePuncher.Time;
+                bool checkedIn = false;
 
-                // try hust straight out doing checkin/ checkout
-                // create function that clears current data
-                // warn before using
-                newTimeIn = newTimePuncher.TimeIn;
-                newTimeOut = newTimePuncher.TimeOut;
+                while (!checkedIn)
+                {
+                    try
+                    {
+
+                        this._dayDisplaying.CheckIn(newTimeIn.Hour, newTimeIn.Minute, newTimeIn.Second);
+                        checkedIn = true;
+                    }
+                    catch (Backend.Exceptions.InvalidTimePunchException ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                        newTimePuncher.DisplayForTimePunch(this._dayDisplaying.TimeIn);
+                        newTimeIn = newTimePuncher.Time;
+                    }
+                }
             }
-            if (this._dayDisplaying.TimeIn == default(DateTime))
+
+            SetUpDataBindings();
+        }
+
+        private void checkOut_Click(object sender, EventArgs e)
+        {
+            DateTime newTimeOut;
+
+            using (TimePunch newTimePuncher = new TimePunch(this._dayDisplaying.TimeOut))
             {
-                try
+                newTimePuncher.ShowDialog();
+                newTimeOut = newTimePuncher.Time;
+                bool checkedOut = false;
+
+                while (!checkedOut)
                 {
-                    this._dayDisplaying.CheckIn(DateTime.Now.Hour, DateTime.Now.Minute, DateTime.Now.Second);
-                }
-                catch (Backend.Exceptions.InvalidTimePunchException ex)
-                {
-                    MessageBox.Show(ex.Message);
+                    try
+                    {
+
+                        this._dayDisplaying.CheckOut(newTimeOut.Hour, newTimeOut.Minute, newTimeOut.Second);
+                        checkedOut = true;
+                    }
+                    catch (Backend.Exceptions.InvalidTimePunchException ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                        newTimePuncher.DisplayForTimePunch(this._dayDisplaying.TimeOut);
+                        newTimeOut = newTimePuncher.Time;
+                    }
                 }
             }
+
             SetUpDataBindings();
         }
     }
